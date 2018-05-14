@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/penguin_brian
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://linuxpenguins.xyz
+  * I am penguin_brian (https://keybase.io/penguin_brian) on keybase.
+  * I have a public key with fingerprint D636 5126 A92D B560 C627  ACED 1784 577F 811F 6EAC
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101ea8b3eae991a80fcf9d26bce6162f4802ce0152bfebbaeb62e86ebbbe080a5080a",
+            "fingerprint": "d6365126a92db560c627aced1784577f811f6eac",
+            "host": "keybase.io",
+            "key_id": "1784577f811f6eac",
+            "kid": "0101ea8b3eae991a80fcf9d26bce6162f4802ce0152bfebbaeb62e86ebbbe080a5080a",
+            "uid": "c9aac80b0cebc2c4efcc6b4c8dd30a19",
+            "username": "penguin_brian"
+        },
+        "service": {
+            "hostname": "linuxpenguins.xyz",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1454737784,
+    "expire_in": 157680000,
+    "prev": "07f832b659a3e2703c2c080f15da535dc3dfc85676a81d7e1c17eb409bee0575",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtUm1QVFUY3oWIhREQY4ahcYCuZQWI92Pvx24wCWY5s8YEODCltt1z7lm4LN5d
+995dlkCJXC0ZKaQPHY3UcqEPklCIagUEaQYtxRgtQW1EKA0YGhFTYYTuZehfPzs/
+zufzPOd9nnlrIoJ1Bn2sL7+iMkFq1P/4J9Dlte7aVoYBh1CKmcswO5pfULGAZMVq
+FwXMjOEETiCeAxTikclE8BxugzaTQDIAIoZgSJuRw0mIcIImgQ0BwCPAkIhj1C1A
+OIfztDZhKZhNlAqQy+kSJUWVFRiKoQmS4U2kAGgGhwzJ8hAJBMsZaZa1cQRhYxAP
+VWKhQ9YYanGAl1Gq6FDv1IN1vrz/wP/Pdbvn5aCJ5yGHAxwiAEloRDYIGWCEnCBQ
+OE+YNKCMXBK/GaloJ5IK3KJkBS6Rl7CtKZj65BEh0tLV7CzAikXJ7V3Ayqne0tdV
+FafLoTigo1h9LlQUp2zW6EqpU8OXIGBdULICURLURFWGB7lk0SFhZkJFQkXUpAkj
+bWQpVg0nBUNep+hCVlFD0CzD4erQ/kEeqOWkZkeRgKFNPIVIFqdUd6pzG0ELPE3R
+AqQEG+RohmV4jhBYRECCRcCImwBCOM3SmGZui+RQxQm1UL5A1ZTFAolX3C6EbQ3f
+FbT0IZ3eoHs4JEhrNl142OJ/O3BqOGo66IPOs3qv44k6/8XuyBz5FoqPeeTdxeE9
+CYEDnqpLBr03cC7tsjOm+teKY7/4fVeZ0SMbG4cvHcc7p88XFt8wn8uf67q3pKmX
+87aWl15ZtxqkdVluDzw1cuLL/HfKPIHtqzaf8C+7tSPjZbNrY836sLW5FUWV8Xcr
+P84+dPK6pyMtv9qb68MzEoMNV/a9NaVkVuMb+oJR5cDYKU9i1sr7zRGvLHWbnnmh
+NzP4/tsJQ19sytYZkyYalvT/1sqHtLRPfnSgzV1T/9JpQWwQz84VLvv2s0Dh0OWZ
+yOrui/xfuaXxM3H5Pc1ybLY/QqT23nQQA/25z/rslkUHQzqaKsbPX5hbJZkH91xN
+6EqfSJmdSqJnlMa2MDuf5ff/fOh0yWNJPbX29OVxLUfReNXjdPL0zrqVqZEN8P3a
+QTD+qnSEyvvGV/53zj0ser9t+Yf10dfYiRtJs9//3jg2tKguI+vrbXJRV87aC31x
+j1p2b0q0DPXt3z573JKx983WT9qLHhx7cLItb7A25LstiZmjhut3u6Nm7vwhjfzU
+3/lVTkRSqHufL/nzH/p3z/Z6m1+7PbzTQCbHxsqfduxROk7t0Jc8eTCsM7CC7aqq
+N0RXlXRml5Wvr0L2dTF1d9pvTq6JJZpbQjesOXo4YqQmO3QmanTsjTOTgfeyXkSN
+LavhtfTnUw+veO5MU2LH09P/AA==
+=o9WB
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/penguin_brian
+
+==================================================================
