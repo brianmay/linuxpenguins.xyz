@@ -1,16 +1,14 @@
-language: python
+language: ruby
 sudo: false
+rvm:
+- 2.5
 
-addons:
-  apt:
-    packages:
-    - tidy
-
-python:
- - 3.6
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
 
 script:
- - tidy -errors -quiet html/index.html
+- bundle exec htmlproofer html --disable-external
 
 jobs:
   include:
