@@ -15,8 +15,6 @@ jobs:
       - image: circleci/ruby:2.5
     steps:
       - checkout # check out the code in the project directory
-      - setup_remote_docker:
-          docker_layer_caching: true
       - run: |
           docker build \
             --file "Dockerfile" \
