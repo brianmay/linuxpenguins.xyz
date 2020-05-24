@@ -29,11 +29,6 @@ spec:
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
-        resources:
-          requests:
-            cpu: 100m
-          limits:
-            cpu: 100m
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
