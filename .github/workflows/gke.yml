@@ -14,10 +14,7 @@
 
 name: Build and Deploy to GKE
 
-on:
-  push:
-    branches:
-    - master
+on: [push, pull_request]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
@@ -26,9 +23,33 @@ env:
   IMAGE: linuxpenguins
 
 jobs:
+  test:
+    name: Test valid HTML
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.5
+
+    - name: Install Packages
+      run: |-
+        gem install bundler
+        bundle install
+
+    - name: Test Result
+      run: |-
+        bundle exec htmlproofer html --disable-external
+
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
 
     steps:
     - name: Checkout
