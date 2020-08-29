@@ -16,12 +16,6 @@ name: Build and Deploy to GKE
 
 on: [push, pull_request]
 
-env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: linuxpenguins
-  GKE_ZONE: us-central1-c
-  IMAGE: linuxpenguins
-
 jobs:
   test:
     name: Test valid HTML
