@@ -25,45 +25,10 @@ jobs:
       run: |-
         bundle exec htmlproofer html --disable-external
 
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
-    runs-on: ubuntu-latest
+  push:
+    name: Push
+    uses: brianmay/workflows/.github/workflows/docker.yaml@70c355700df29dccf131141aa1aa3c4e8b2b9f65
+    secrets:
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
     needs:
       - test
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Docker meta
-        id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
-        with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/linuxpenguins.xyz
-          tag-semver: |
-            {{version}}
-            {{major}}.{{minor}}
-      - name: Docker meta
-        id: meta
-        uses: brianmay/docker-meta@main
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/amd64
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/linuxpenguins.xyz:master
-          cache-to: type=inline
-          build-args: ${{ steps.meta.outputs.build-args }}
