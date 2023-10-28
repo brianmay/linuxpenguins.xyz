@@ -53,6 +53,6 @@
           '';
         };
         devShells.default =
-          pkgs.mkShell { buildInputs = [ gems pkgs.bundix ]; };
+          pkgs.mkShell { buildInputs = [ gems pkgs.ruby pkgs.bundix ]; };
       });
 }
