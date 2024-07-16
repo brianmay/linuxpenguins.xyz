@@ -13,9 +13,11 @@
         # Generate a user-friendly version number.
         version = builtins.substring 0 8 self.lastModifiedDate;
 
+        ruby = pkgs.ruby_3_3;
+
         gems = pkgs.bundlerEnv {
           name = "gems";
-          ruby = pkgs.ruby;
+          ruby = ruby;
           # gemfile = ./Gemfile;
           # lockfile = ./Gemfile.lock;
           # gemset = ./gemset.nix;
@@ -53,6 +55,6 @@
           '';
         };
         devShells.default =
-          pkgs.mkShell { buildInputs = [ gems pkgs.ruby pkgs.bundix ]; };
+          pkgs.mkShell { buildInputs = [ ruby pkgs.bundix ]; };
       });
 }
