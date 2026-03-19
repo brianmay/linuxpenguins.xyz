@@ -23,4 +23,4 @@ jobs:
 
     - name: Test Result
       run: |-
-        bundle exec htmlproofer html --disable-external
+        bundle exec htmlproofer html --disable-external=true
