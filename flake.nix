@@ -1,7 +1,7 @@
 {
   description = "LinuxPenguins's website";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.flockenzeit.url = "github:balsoft/flockenzeit";
 
@@ -14,27 +14,15 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
 
-      # Generate a user-friendly version number.
       version = builtins.substring 0 8 self.lastModifiedDate;
-
-      ruby = pkgs.ruby_3_3;
-
-      gems = pkgs.bundlerEnv {
-        name = "gems";
-        ruby = ruby;
-        # gemfile = ./Gemfile;
-        # lockfile = ./Gemfile.lock;
-        # gemset = ./gemset.nix;
-        gemdir = ./.;
-      };
 
       BUILD_DATE = with flockenzeit.lib.splitSecondsSinceEpoch {} self.lastModified; "${F}T${T}${Z}";
       VCS_REF = "${self.rev or "dirty"}";
     in {
-      checks.default = pkgs.stdenv.mkDerivation {
-        name = "linuxpenguins-${version}";
+      checks.html = pkgs.stdenv.mkDerivation {
+        name = "linuxpenguins-html-${version}";
         src = ./html;
-        buildInputs = [gems];
+        buildInputs = [pkgs.html-proofer];
         buildPhase = ''
           htmlproofer . --disable-external
         '';
@@ -43,6 +31,7 @@
           cp -r . $out
         '';
       };
+
       packages.default = pkgs.stdenv.mkDerivation {
         name = "linuxpenguins-${version}";
         src = ./html;
@@ -55,7 +44,8 @@
           cp -r . $out
         '';
       };
+
       devShells.default =
-        pkgs.mkShell {buildInputs = [ruby pkgs.bundix];};
+        pkgs.mkShell {buildInputs = [pkgs.html-proofer];};
     });
 }
